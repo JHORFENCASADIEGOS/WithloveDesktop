@@ -4,109 +4,73 @@
  */
 package com.withlove.model;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author USER
  */
 public class Patient {
     
-    private int identification;
-    private int idPatient;
-    private String firstNames;
-    private String surNames;
-    private String neighborhood;
-    private String address;
-    private String city;
+     private Long idPatient;
+    private String identification;
+    private String namePatient;
+    private String lastNamePa;
     private String email;
-    private String phoneNumber;
-    private String password;
-    private int license;
-
-    public Patient(int identification, String firstNames, String surNames, String neighborhood, String address, String city, String email, String phoneNumber, String password) {
-        this.identification = identification;
-        this.firstNames = firstNames;
-        this.surNames = surNames;
-        this.neighborhood = neighborhood;
-        this.address = address;
-        this.city = city;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
-    }
-
-    public Patient(String firstNames, int license) {
-        this.firstNames = firstNames;
-        this.license = license;
-    }
-
-    
+    private String phoneNumberPatient;
+    private LocalDate birthdayDate;
+    private Integer gender;
+    private String passwordPatient;
+    private String insurer;
 
     public Patient() {
     }
 
+    public Patient(Long idPatient, String identification, String namePatient, String lastNamePa, String email, String phoneNumberPatient, LocalDate birthdayDate, Integer gender, String passwordPatient, String insurer) {
+        this.idPatient = idPatient;
+        this.identification = identification;
+        this.namePatient = namePatient;
+        this.lastNamePa = lastNamePa;
+        this.email = email;
+        this.phoneNumberPatient = phoneNumberPatient;
+        this.birthdayDate = birthdayDate;
+        this.gender = gender;
+        this.passwordPatient = passwordPatient;
+        this.insurer = insurer;
+    }
+
     
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public int getLicense() {
-        return license;
-    }
-
-    public void setLicense(int license) {
-        this.license = license;
-    }
-    public int getIdPatient() {
+    public Long getIdPatient() {
         return idPatient;
     }
 
-    public void setIdPatient(int idPatient) {
+    public void setIdPatient(Long idPatient) {
         this.idPatient = idPatient;
     }
 
-    public int getIdentification() {
+    public String getIdentification() {
         return identification;
     }
 
-    public void setIdentification(int identification) {
+    public void setIdentification(String identification) {
         this.identification = identification;
     }
 
-    public String getFirstNames() {
-        return firstNames;
+    public String getNamePatient() {
+        return namePatient;
     }
 
-    public void setFirstNames(String firstNames) {
-        this.firstNames = firstNames;
+    public void setNamePatient(String namePatient) {
+        this.namePatient = namePatient;
     }
 
-    public String getSurNames() {
-        return surNames;
+    public String getLastNamePa() {
+        return lastNamePa;
     }
 
-    public void setSurNames(String surNames) {
-        this.surNames = surNames;
-    }
-
-    public String getNeighborhood() {
-        return neighborhood;
-    }
-
-    public void setNeighborhood(String neighborhood) {
-        this.neighborhood = neighborhood;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
+    public void setLastNamePa(String lastNamePa) {
+        this.lastNamePa = lastNamePa;
     }
 
     public String getEmail() {
@@ -117,21 +81,46 @@ public class Patient {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPhoneNumberPatient() {
+        return phoneNumberPatient;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPhoneNumberPatient(String phoneNumberPatient) {
+        this.phoneNumberPatient = phoneNumberPatient;
     }
 
-    public String getCity() {
-        return city;
+    public LocalDate getBirthdayDate() {
+        return birthdayDate;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setBirthdayDate(LocalDate birthdayDate) {
+        this.birthdayDate = birthdayDate;
     }
+
+    public Integer getGender() {
+        return gender;
+    }
+
+    public void setGender(Integer gender) {
+        this.gender = gender;
+    }
+
+    public String getPasswordPatient() {
+        return passwordPatient;
+    }
+
+    public void setPasswordPatient(String passwordPatient) {
+        this.passwordPatient = passwordPatient;
+    }
+
+    public String getInsurer() {
+        return insurer;
+    }
+
+    public void setInsurer(String insurer) {
+        this.insurer = insurer;
+    }
+    
     
     
     

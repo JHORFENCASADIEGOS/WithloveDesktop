@@ -12,9 +12,6 @@ import com.withlove.model.Professional;
  */
 public interface professionalDAO extends CRUD<Professional> {
     
-     public boolean validateEmail(String email);
-     public String ecnode(String passEncrypt) ; 
-    public String deecnode(String passDecrypt);
+       public boolean validateEmail(String email);
     Professional ValidateProfessional(int id, String pass) ;
-     public void updateLicense(int license,int id);
 }

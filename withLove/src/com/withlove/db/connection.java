@@ -14,7 +14,7 @@ public class connection {
     private final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     private final String DB_URL = "jdbc:mysql://localhost/dbwithlove";
     private final String USER = "root";
-    private final String PASS = "123456789";
+    private final String PASS = "";
     
     public void establishConnection() throws ClassNotFoundException {
         try {

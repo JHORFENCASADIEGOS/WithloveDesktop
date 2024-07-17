@@ -13,10 +13,10 @@ package com.withlove.DAO;
 public interface CRUD<T> {
     
     
-    void create(T t) ;
-    T searchForId(int id) ;
+     void create(T t) ;
+    T searchForId(String id) ;
     void update(T t) ;
-    void delete(int id) ;
+    void delete(Long id) ;
     
 
 

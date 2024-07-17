@@ -7,21 +7,14 @@ package com.withlove.DAO;
 import java.sql.PreparedStatement;
 import com.withlove.db.connection;
 import com.withlove.model.Patient;
-import java.security.MessageDigest;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import javax.crypto.Cipher;
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
 import javax.swing.JOptionPane;
-import org.apache.commons.codec.binary.Base64;
+
 
 
 
@@ -151,48 +144,7 @@ public class PatientDAOImpl extends connection implements patientDAO {
         return mather.find();
     }
 
-    @Override
-    public String ecnode(String passEncrypt) {
-         String secretKey = "#1PaSsWoRd1#";
-        String encrypt = "";
-        try {
-            MessageDigest md5 = MessageDigest.getInstance("MD5");
-            byte[] llavePassword = md5.digest(secretKey.getBytes("utf-8"));
-            byte[] BytesKey = Arrays.copyOf(llavePassword, 24);
-            SecretKey key = new SecretKeySpec(BytesKey, "DESede");
-            Cipher cifrado = Cipher.getInstance("DESede");
-            cifrado.init(Cipher.ENCRYPT_MODE, key);
-            byte[] plainTextBytes = passEncrypt.getBytes("utf-8");
-            byte[] buf = cifrado.doFinal(plainTextBytes);
-            byte[] base64Bytes = Base64.encodeBase64(buf);
-            encrypt = new String(base64Bytes);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Encryption error: "+ex.toString());
-        }
-        return encrypt;
-    }
-
-    @Override
-    public String deecnode(String passDecrypt) {
-        String secretKey = "!2pAsSwOrD2!";
-         String decrypt = "";
-        try {
-            byte[] message = Base64.decodeBase64(passDecrypt.getBytes("utf-8"));
-            MessageDigest md5 = MessageDigest.getInstance("MD5");
-            byte[] digestOfPassword = md5.digest(secretKey.getBytes("utf-8"));
-            byte[] keyBytes = Arrays.copyOf(digestOfPassword, 24);
-            SecretKey key = new SecretKeySpec(keyBytes, "DESede");
-            Cipher decipher = Cipher.getInstance("DESede");
-            decipher.init(Cipher.DECRYPT_MODE, key);
-            byte[] plainText = decipher.doFinal(message);
-            decrypt = new String(plainText, "UTF-8");
-
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Error decrypting: "+ex.toString());
-        }
-        return decrypt;
-    }
-
+    
     @Override
     public Patient ValidatePatient(int id, String pass)  {
          Patient pat = null;

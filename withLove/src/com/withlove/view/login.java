@@ -103,7 +103,6 @@ public class login extends javax.swing.JFrame {
         jLabel5.setText("WELCOME");
 
         jLabel6.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("WITH");
 
         jLabel7.setFont(new java.awt.Font("Roboto Black", 0, 48)); // NOI18N
@@ -153,7 +152,7 @@ public class login extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel2.setText("Identification:");
-        container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 90, 20));
+        container.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 100, 20));
 
         jLabel4.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         jLabel4.setText("Password:");
@@ -171,7 +170,6 @@ public class login extends javax.swing.JFrame {
 
         btnLogin.setBackground(new java.awt.Color(255, 153, 153));
         btnLogin.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnLogin.setForeground(new java.awt.Color(0, 0, 0));
         btnLogin.setText("LOG IN");
         btnLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -189,7 +187,6 @@ public class login extends javax.swing.JFrame {
         container.add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 120, 30));
 
         txtPassword.setFont(new java.awt.Font("Dialog", 3, 14)); // NOI18N
-        txtPassword.setForeground(new java.awt.Color(0, 0, 0));
         txtPassword.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 txtPasswordMousePressed(evt);
@@ -215,7 +212,7 @@ public class login extends javax.swing.JFrame {
                 btnSignUpMouseExited(evt);
             }
         });
-        container.add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 480, -1, -1));
+        container.add(btnSignUp, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 480, -1, -1));
 
         buttonGroup1.add(RbtnPatient);
         RbtnPatient.setSelected(true);

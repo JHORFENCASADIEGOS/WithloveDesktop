@@ -12,7 +12,7 @@ public class connection {
     
     protected Connection conect;
     private final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-    private final String DB_URL = "jdbc:mysql://localhost/dbwithlove";
+    private final String DB_URL = "jdbc:mysql://localhost/withlovedb";
     private final String USER = "root";
     private final String PASS = "";
     

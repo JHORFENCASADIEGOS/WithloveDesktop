@@ -6,6 +6,8 @@ package com.withlove.main;
 
 import com.withlove.db.connection;
 import com.withlove.view.login;
+import com.withlove.view.crud;
+import com.withlove.view.mainU;
 
 /**
  *
@@ -20,10 +22,14 @@ public class main {
         // TODO code application logic here
         /* connection cone = new connection();
         cone.establishConnection(); */
-        login log = new login();
+       /* login log = new login();
         log.setVisible(true);
         log.setResizable(false);
-        log.setLocationRelativeTo(null); 
+        log.setLocationRelativeTo(null);  */
+       mainU cd =new mainU();
+        cd.setVisible(true);
+        cd.setLocationRelativeTo(null);
+        cd.setResizable(false);
         
     }
     

@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USER/Documents/NetBeansProjects/withLove/src/com/withlove/main/main.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/DAO/PatientDAOImpl.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/view/login.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/view/mainP.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/db/connection.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/main/main.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/view/mainU.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/view/crud.java</file>
+            <file>file:/C:/Users/SENA/Documents/WithloveDesktop/withLove/src/com/withlove/view/homeP.java</file>
         </group>
     </open-files>
 </project-private>

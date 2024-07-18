@@ -37,7 +37,16 @@ public class mainU extends javax.swing.JFrame {
         setImageLabel(logo, "src/com/withlove/img/robot.jpg");
         setResizable(false);
 
-        homeU home = new homeU();
+       /* homeU home = new homeU();
+        home.setSize(1000, 540);
+        home.setLocation(0, 0);
+        home.setVisible(true);
+        containersMain.removeAll();
+        containersMain.add(home);
+        containersMain.revalidate();
+        containersMain.repaint();*/
+       
+       crud home = new crud();
         home.setSize(1000, 540);
         home.setLocation(0, 0);
         home.setVisible(true);
@@ -45,7 +54,7 @@ public class mainU extends javax.swing.JFrame {
         containersMain.add(home);
         containersMain.revalidate();
         containersMain.repaint();
-
+       
         login log = new login();
         id = log.id;
        // pat = daoPat.searchForId(id);

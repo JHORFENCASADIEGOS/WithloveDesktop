@@ -10,12 +10,13 @@ import com.withlove.model.Patient;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
-
+import java.util.ArrayList;
 
 
 
@@ -96,18 +97,7 @@ public class PatientDAOImpl extends connection implements patientDAO {
         }
         return pat;
     }
-     /*     
-    private Long idPatient;
-    private String identification;
-    private String namePatient;
-    private String lastNamePa;
-    private String email;
-    private String phoneNumberPatient;
-    private LocalDate birthdayDate;
-    private Integer gender;
-    private String passwordPatient;
-    private String insurer;
-    */
+    
     @Override
     public void update(Patient pat) {
          try {
@@ -195,4 +185,42 @@ public class PatientDAOImpl extends connection implements patientDAO {
         }
         return pat;
     }   
+
+     @Override
+    public List<Patient> getAll() {
+        List<Patient> patientList = new ArrayList<Patient>();
+        
+        try {
+            this.establishConnection();
+            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM patient;");
+            
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Patient pat = new Patient();
+                pat.setIdPatient(rs.getLong("idPatient"));
+                pat.setIdentification(rs.getString("identification"));
+                pat.setNamePatient(rs.getString("namePatient"));
+                pat.setLastNamePa(rs.getString("lastNamePa"));
+                pat.setEmail(rs.getString("email"));
+                pat.setPhoneNumberPatient(rs.getString("phoneNumberPatient"));
+                LocalDate birthdayDate = rs.getDate("birthdayDate").toLocalDate();
+                pat.setBirthdayDate(birthdayDate);
+                pat.setGender(rs.getInt("gender"));
+                pat.setPasswordPatient(rs.getString("passwordPatient"));
+                pat.setInsurer(rs.getString("insurer"));
+                patientList.add(pat);
+            }
+            rs.close();
+            st.close();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.toString());
+        } finally {
+            try {
+                this.closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(PatientDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return patientList;
+    }
 }  

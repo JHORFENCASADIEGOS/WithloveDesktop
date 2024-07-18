@@ -21,8 +21,6 @@ public class Category {
         this.nameProfession = nameProfession;
     }
     
-    
-
     public Long getIdCategory() {
         return idCategory;
     }

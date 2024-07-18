@@ -259,12 +259,10 @@ public class login extends javax.swing.JFrame {
         
         if(!txtIdentification.getText().trim().equals("") && !(new String(txtPassword.getPassword())).trim().equals("")){
             if(RbtnPatient.isSelected()){
-                try {
-                    String passwordE = daoPat.ecnode(new String(txtPassword.getPassword()));
-                    pat=daoPat.ValidatePatient((Integer.parseInt(txtIdentification.getText())), passwordE);
+                try {                    
+                    pat=daoPat.ValidatePatient((Integer.parseInt(txtIdentification.getText())), new String(txtPassword.getPassword()));
                     if(pat!=null){
-                       name = pat.getFirstNames();
-                       licen = pat.getLicense();
+                       name = pat.getNamePatient();                      
                        id = (Integer.parseInt(txtIdentification.getText()));   
                        tabl= 1;
                        if(licen==1){
@@ -274,10 +272,7 @@ public class login extends javax.swing.JFrame {
                            app1.setLocationRelativeTo(null);
                            this.dispose();
                        } else{
-                           license lic = new license();
-                           lic.setVisible(true);
-                           lic.setResizable(false);
-                           lic.setLocationRelativeTo(null);
+                           // 
                            this.dispose();
                        }
                     } else{
@@ -290,11 +285,10 @@ public class login extends javax.swing.JFrame {
                 }
             } if(RbtnProfessional.isSelected()){
                 try {
-                    String passwordE = daoPro.ecnode( new String(txtPassword.getPassword()));
-                    pro=daoPro.ValidateProfessional((Integer.parseInt(txtIdentification.getText())), passwordE);
+                    
+                    pro=daoPro.ValidateProfessional((Integer.parseInt(txtIdentification.getText())), ( new String(txtPassword.getPassword())));
                     if(pro!=null){
-                       name = pro.getFirstNames();
-                       licen = pro.getLicense();
+                       name = pro.getNameProfessional();                       
                        id = (Integer.parseInt(txtIdentification.getText())); 
                        tabl = 2;
                        if(licen==1){
@@ -304,10 +298,7 @@ public class login extends javax.swing.JFrame {
                            app2.setLocationRelativeTo(null);
                            this.dispose();
                        } else{
-                           license lic = new license();
-                           lic.setVisible(true);
-                           lic.setResizable(false);
-                           lic.setLocationRelativeTo(null);
+                           // 
                            this.dispose();
                        }
                     }else{

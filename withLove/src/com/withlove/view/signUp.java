@@ -360,10 +360,10 @@ public class signUp extends javax.swing.JFrame {
                 if (new String(jPasswordField1.getPassword()).equals(new String(jPasswordField2.getPassword()))) {
                     if (daoPat.validateEmail(txtEmail.getText().trim())) {
                         try {
-                            String passwordE = daoPat.ecnode(new String(jPasswordField1.getPassword()));
+                        //    String passwordE = daoPat.ecnode(new String(jPasswordField1.getPassword()));
                             // (Integer.parseInt(txtIdentityC.getText())), txtName.getText(), txtLastName.getText(), txtNeighborhood.getText(), txtAddress.getText(), txtCity.getText(), txtEmail.getText(), txtPhone.getText(), passwordE)
-                            Patient pat = new Patient((Integer.parseInt(txtIdentityC.getText())), txtName.getText(), txtLastName.getText(), txtNeighborhood.getText(), txtAddress.getText(), txtCity.getText(), txtEmail.getText(), txtPhone.getText(), passwordE);
-                            daoPat.create(pat);
+                          //  Patient pat = new Patient((Integer.parseInt(txtIdentityC.getText())), txtName.getText(), txtLastName.getText(), txtNeighborhood.getText(), txtAddress.getText(), txtCity.getText(), txtEmail.getText(), txtPhone.getText(), passwordE);
+                         //   daoPat.create(pat);
                             JOptionPane.showConfirmDialog(null, "Patient Created");
                             login log = new login();
                             log.setVisible(true);
@@ -391,10 +391,10 @@ public class signUp extends javax.swing.JFrame {
                 if (new String(jPasswordField1.getPassword()).equals(new String(jPasswordField2.getPassword()))) {
                     if (daoPro.validateEmail(txtEmail.getText().trim())) {
                         try {
-                            String passwordE = daoPro.ecnode(new String(jPasswordField1.getPassword()));
+                          //  String passwordE = daoPro.ecnode(new String(jPasswordField1.getPassword()));
                             // (Integer.parseInt(txtIdentityC.getText())), txtName.getText(), txtLastName.getText(), txtNeighborhood.getText(), txtAddress.getText(), txtCity.getText(), txtEmail.getText(), txtPhone.getText(), passwordE, txtProfession.getText(), txtInformation.getText())
-                            Professional pro = new Professional((Integer.parseInt(txtIdentityC.getText())), txtName.getText(), txtLastName.getText(), txtNeighborhood.getText(), txtAddress.getText(), txtCity.getText(), txtEmail.getText(), txtPhone.getText(), passwordE, txtProfession.getText(), txtInformation.getText());
-                            daoPro.create(pro);;
+                         //   Professional pro = new Professional((Integer.parseInt(txtIdentityC.getText())), txtName.getText(), txtLastName.getText(), txtNeighborhood.getText(), txtAddress.getText(), txtCity.getText(), txtEmail.getText(), txtPhone.getText(), passwordE, txtProfession.getText(), txtInformation.getText());
+                      //      daoPro.create(pro);;
                             JOptionPane.showConfirmDialog(null, "Professional Created");
                             login log = new login();
                             log.setVisible(true);

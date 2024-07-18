@@ -45,7 +45,7 @@ public class mainP extends javax.swing.JFrame {
         containersMain.repaint();
         login log = new login();
         id = log.id;
-        pro = daoPro.searchForId(id);
+      //  pro = daoPro.searchForId(id);
 
     }
 

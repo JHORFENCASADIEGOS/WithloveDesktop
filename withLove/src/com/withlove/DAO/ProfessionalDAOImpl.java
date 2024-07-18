@@ -9,12 +9,13 @@ import com.withlove.model.Professional;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
-
+import java.util.ArrayList;
 
 
 /**
@@ -168,6 +169,42 @@ public class ProfessionalDAOImpl extends connection implements professionalDAO{
         }
         return pro;
     } 
+
+    @Override
+    public List<Professional> getAll() {
+        List<Professional> professionalList = new ArrayList<>();
+        
+        try {
+            this.establishConnection();
+            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM professional;");
+            
+            ResultSet rs = st.executeQuery();
+            while(rs.next()) {
+                Professional pro = new Professional();
+                pro.setIdProfessional(rs.getLong("idProfessional"));
+                pro.setIdentification(rs.getString("identification"));              
+                pro.setNameProfessional(rs.getString("nameProfessional"));
+                pro.setLastNamePr(rs.getString("lastNamePr"));
+                pro.setEmail(rs.getString("email"));
+                pro.setPhoneNumberProf(rs.getString("phoneNumberProf"));
+                pro.setPasswordPro(rs.getString("passwordPro"));
+                pro.setProfession(rs.getString("profession"));
+                pro.setIdCategory(rs.getLong("idCategory"));
+                professionalList.add(pro);
+            }
+            rs.close();
+            st.close();
+        } catch(Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: "+e.toString());
+        } finally {
+            try {
+                this.closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(ProfessionalDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return professionalList;
+    }
 
    
 }

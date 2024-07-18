@@ -5,7 +5,7 @@
 package com.withlove.DAO;
 
 
-
+import java.util.List;
 /**
  *
  * @author USER
@@ -17,11 +17,6 @@ public interface CRUD<T> {
     T searchForId(String id) ;
     void update(T t) ;
     void delete(Long id) ;
-    
+    List<T> getAll();
 
-
-
-
-
-    
 }

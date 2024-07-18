@@ -48,7 +48,7 @@ public class mainU extends javax.swing.JFrame {
 
         login log = new login();
         id = log.id;
-        pat = daoPat.searchForId(id);
+       // pat = daoPat.searchForId(id);
     }
 
     private void setImageLabel(JLabel labelName, String root) {

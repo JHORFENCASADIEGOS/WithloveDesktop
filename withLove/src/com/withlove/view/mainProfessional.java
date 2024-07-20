@@ -20,21 +20,21 @@ import javax.swing.JLabel;
  *
  * @author USER
  */
-public class mainU extends javax.swing.JFrame {
+public class mainProfessional extends javax.swing.JFrame {
 
     /**
      * Creates new form main
      */
     patientDAO daoPat = new PatientDAOImpl();
     Patient pat = new Patient();
-    int id;
+  
 
-    public mainU() {
+    public mainProfessional() {
         initComponents();
 
         // setImageLabel(background, "src/com/withlove/img/background.jpg");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setImageLabel(logo, "src/com/withlove/img/robot.jpg");
+        setImageLabel(logo, "src/com/withlove/img/logo.png");
         setResizable(false);
 
        /* homeU home = new homeU();
@@ -55,8 +55,7 @@ public class mainU extends javax.swing.JFrame {
         containersMain.revalidate();
         containersMain.repaint();
        
-        login log = new login();
-        id = log.id;
+        
        // pat = daoPat.searchForId(id);
     }
 
@@ -79,16 +78,13 @@ public class mainU extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         containersMain = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        logo = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         btnLogOut = new javax.swing.JLabel();
-        btnSearch = new javax.swing.JLabel();
-        btnProfile = new javax.swing.JLabel();
-        btnHome = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1000, 600));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -96,28 +92,26 @@ public class mainU extends javax.swing.JFrame {
         containersMain.setLayout(containersMainLayout);
         containersMainLayout.setHorizontalGroup(
             containersMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGap(0, 760, Short.MAX_VALUE)
         );
         containersMainLayout.setVerticalGroup(
             containersMainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 540, Short.MAX_VALUE)
         );
 
-        jPanel1.add(containersMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 1000, 540));
+        jPanel1.add(containersMain, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 760, 540));
 
         jPanel2.setBackground(new java.awt.Color(0, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel2.add(logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 53, 50));
 
-        jLabel6.setFont(new java.awt.Font("Roboto Black", 3, 36)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("WITH");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 15, -1, -1));
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 3, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel1.setText("Dashboard");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 140, 50));
 
-        jLabel7.setFont(new java.awt.Font("Roboto Black", 3, 36)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel7.setText("LOVE");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 15, -1, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 760, 70));
+
+        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
 
         btnLogOut.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
@@ -133,51 +127,46 @@ public class mainU extends javax.swing.JFrame {
                 btnLogOutMouseExited(evt);
             }
         });
-        jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 30, 50, 15));
 
-        btnSearch.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnSearch.setForeground(new java.awt.Color(255, 255, 255));
-        btnSearch.setText("Search");
-        btnSearch.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnSearchMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnSearchMouseExited(evt);
-            }
-        });
-        jPanel2.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 30, 50, 15));
+        logo.setFont(new java.awt.Font("Copperplate Gothic Light", 3, 14)); // NOI18N
+        logo.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnProfile.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnProfile.setForeground(new java.awt.Color(255, 255, 255));
-        btnProfile.setText("Profile");
-        btnProfile.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnProfileMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnProfileMouseExited(evt);
-            }
-        });
-        jPanel2.add(btnProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 30, 50, 15));
+        jLabel2.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("WITHLOVE");
 
-        btnHome.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
-        btnHome.setForeground(new java.awt.Color(255, 255, 255));
-        btnHome.setText("Home");
-        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnHomeMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnHomeMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnHomeMouseExited(evt);
-            }
-        });
-        jPanel2.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 30, 50, 15));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
+                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(182, 182, 182))
+        );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 70));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 610));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,56 +194,6 @@ public class mainU extends javax.swing.JFrame {
         btnLogOut.setForeground(white);
     }//GEN-LAST:event_btnLogOutMouseExited
 
-    private void btnSearchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseEntered
-        // TODO add your handling code here:
-        btnSearch.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnSearch.setForeground(black);
-    }//GEN-LAST:event_btnSearchMouseEntered
-
-    private void btnSearchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSearchMouseExited
-        // TODO add your handling code here:
-        btnSearch.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-        btnSearch.setForeground(white);
-    }//GEN-LAST:event_btnSearchMouseExited
-
-    private void btnProfileMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfileMouseEntered
-        // TODO add your handling code here:
-        btnProfile.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnProfile.setForeground(black);
-    }//GEN-LAST:event_btnProfileMouseEntered
-
-    private void btnProfileMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfileMouseExited
-        // TODO add your handling code here:
-        btnProfile.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-        btnProfile.setForeground(white);
-    }//GEN-LAST:event_btnProfileMouseExited
-
-    private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
-        // TODO add your handling code here:
-        btnHome.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        btnHome.setForeground(black);
-
-    }//GEN-LAST:event_btnHomeMouseEntered
-
-    private void btnHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseExited
-        // TODO add your handling code here:
-        btnHome.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
-        btnHome.setForeground(white);
-    }//GEN-LAST:event_btnHomeMouseExited
-
-    private void btnHomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseClicked
-        // TODO add your handling code here:
-        homeU home = new homeU();
-        home.setSize(1000, 540);
-        home.setLocation(0, 0);
-        home.setVisible(true);
-        containersMain.removeAll();
-        containersMain.add(home);
-        containersMain.revalidate();
-        containersMain.repaint();
-
-    }//GEN-LAST:event_btnHomeMouseClicked
-
     private void btnLogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutMouseClicked
         // TODO add your handling code here:
         pat = null;
@@ -270,15 +209,13 @@ public class mainU extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel btnHome;
     private javax.swing.JLabel btnLogOut;
-    private javax.swing.JLabel btnProfile;
-    private javax.swing.JLabel btnSearch;
     private javax.swing.JPanel containersMain;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logo;
     // End of variables declaration//GEN-END:variables
 }

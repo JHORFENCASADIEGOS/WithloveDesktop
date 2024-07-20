@@ -146,13 +146,20 @@ public class ProfessionalDAOImpl extends connection implements professionalDAO{
         
         try {
             this.establishConnection();
-            PreparedStatement st = this.conect.prepareStatement("SELECT nameProfessional, idCategory FROM professional WHERE identification = ? AND password = ? LIMIT 1;");
+            PreparedStatement st = this.conect.prepareStatement("SELECT * WHERE identification = ? AND password = ? LIMIT 1;");
             st.setInt(1, id);
             st.setString(2, pass);
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
-                pro = new Professional();                
+                pro = new Professional();                                
+                pro.setIdProfessional(rs.getLong("idProfessional"));
+                pro.setIdentification(rs.getString("identification"));              
                 pro.setNameProfessional(rs.getString("nameProfessional"));
+                pro.setLastNamePr(rs.getString("lastNamePr"));
+                pro.setEmail(rs.getString("email"));
+                pro.setPhoneNumberProf(rs.getString("phoneNumberProf"));
+                pro.setPasswordPro(rs.getString("passwordPro"));
+                pro.setProfession(rs.getString("profession"));
                 pro.setIdCategory(rs.getLong("idCategory"));
                 JOptionPane.showConfirmDialog(null, "Welcome");
             }

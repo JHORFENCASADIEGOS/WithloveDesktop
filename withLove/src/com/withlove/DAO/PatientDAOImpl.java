@@ -161,15 +161,24 @@ public class PatientDAOImpl extends connection implements patientDAO {
         
         try {
             this.establishConnection();
-            PreparedStatement st = this.conect.prepareStatement("SELECT idPatient,namePatient FROM patient WHERE identification = ? AND passwordPatient = ? LIMIT 1;");
+            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM patient WHERE identification = ? AND passwordPatient = ? LIMIT 1;");
             st.setInt(1, id);
             st.setString(2, pass);
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
                 pat = new Patient();               
-                pat.setIdPatient(rs.getLong("idPatient"));
+               pat.setIdPatient(rs.getLong("idPatient"));
+                pat.setIdentification(rs.getString("identification"));
                 pat.setNamePatient(rs.getString("namePatient"));
-                JOptionPane.showConfirmDialog(null, "Welcome");
+                pat.setLastNamePa(rs.getString("lastNamePa"));
+                pat.setEmail(rs.getString("email"));
+                pat.setPhoneNumberPatient(rs.getString("phoneNumberPatient"));
+                LocalDate birthdayDate = rs.getDate("birthdayDate").toLocalDate();
+                pat.setBirthdayDate(birthdayDate);
+                pat.setGender(rs.getInt("gender"));
+                pat.setPasswordPatient(rs.getString("passwordPatient"));
+                pat.setInsurer(rs.getString("insurer"));
+               // JOptionPane.showConfirmDialog(null, "Welcome");
             }
             rs.close();
             st.close();

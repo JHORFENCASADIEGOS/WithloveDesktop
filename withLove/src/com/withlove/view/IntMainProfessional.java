@@ -13,12 +13,12 @@ import java.awt.Cursor;
  *
  * @author USER
  */
-public class homeP extends javax.swing.JPanel {
+public class IntMainProfessional extends javax.swing.JPanel {
 
     /**
      * Creates new form homeU
      */
-    public homeP() {
+    public IntMainProfessional() {
         initComponents();
     }
 

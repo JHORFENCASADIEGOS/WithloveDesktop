@@ -296,7 +296,8 @@ public class login extends javax.swing.JFrame {
                            this.dispose();
                        } else{
                            // 
-                           this.dispose();
+                          // this.dispose();
+                           System.out.println("Hola");
                        }
                     }else{
                         JOptionPane.showConfirmDialog(null, "Professional not found");

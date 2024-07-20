@@ -20,8 +20,8 @@ public class main {
      */
     public static void main(String[] args) throws ClassNotFoundException {
         // TODO code application logic here
-        /* connection cone = new connection();
-        cone.establishConnection(); */
+        /*connection cone = new connection();
+        cone.establishConnection();  */
        /* login log = new login();
         log.setVisible(true);
         log.setResizable(false);
@@ -29,7 +29,7 @@ public class main {
        mainU cd =new mainU();
         cd.setVisible(true);
         cd.setLocationRelativeTo(null);
-        cd.setResizable(false);
+        cd.setResizable(false); 
         
     }
     

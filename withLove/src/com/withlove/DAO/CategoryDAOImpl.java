@@ -135,4 +135,30 @@ public class CategoryDAOImpl extends connection implements categoryDAO {
         }
         return categoryList;
     }
+
+    @Override
+    public int countCategory() {
+     int count=0;
+        try {
+            this.establishConnection();
+             PreparedStatement st = this.conect.prepareStatement("SELECT COUNT(*) FROM category");
+            
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                 count = rs.getInt(1); // Obtener el primer valor de la primera fila
+               // System.out.println("Total de pacientes: " + count);
+            }
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.toString());
+        } finally {
+            try {
+                this.closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(PatientDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        return count;
+    }
 }

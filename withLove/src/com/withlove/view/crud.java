@@ -22,6 +22,7 @@ public class crud extends javax.swing.JPanel {
         initComponents();
         loadDataIntoTable();
         adjustColumnSizes();
+        this.prueba.setText("Patient: "+patient.countPatient());
     }
     
     private void loadDataIntoTable() {
@@ -95,8 +96,13 @@ public class crud extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablePatients = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        prueba = new javax.swing.JLabel();
 
-        setMinimumSize(new java.awt.Dimension(1000, 540));
+        setMinimumSize(new java.awt.Dimension(760, 540));
+        setPreferredSize(new java.awt.Dimension(760, 540));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablePatients.setModel(new javax.swing.table.DefaultTableModel(
@@ -122,12 +128,28 @@ public class crud extends javax.swing.JPanel {
             tablePatients.getColumnModel().getColumn(0).setMaxWidth(60);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 880, 250));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 590, 250));
+
+        jButton1.setText("jButton1");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        jButton2.setText("jButton2");
+        add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 150, -1, -1));
+
+        jButton3.setText("jButton3");
+        add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 150, -1, -1));
+
+        prueba.setText("No borrar esto");
+        add(prueba, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 80, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel prueba;
     private javax.swing.JTable tablePatients;
     // End of variables declaration//GEN-END:variables
 }

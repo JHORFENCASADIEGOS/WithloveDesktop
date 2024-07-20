@@ -112,7 +112,7 @@ public class IntMainProfessional extends javax.swing.JPanel {
         jLabel6.setText("Para agendar tu cita en el siguiente boton");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 250, -1));
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/withlove/img/background.jpg"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/withlove/img/logo.png"))); // NOI18N
         add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 540));
     }// </editor-fold>//GEN-END:initComponents
 

@@ -213,5 +213,31 @@ public class ProfessionalDAOImpl extends connection implements professionalDAO{
         return professionalList;
     }
 
+    @Override
+    public int countProfessional() {
+         int count=0;
+        try {
+            this.establishConnection();
+             PreparedStatement st = this.conect.prepareStatement("SELECT COUNT(*) FROM professional");
+            
+            ResultSet rs = st.executeQuery();
+            if (rs.next()) {
+                 count = rs.getInt(1); // Obtener el primer valor de la primera fila
+               // System.out.println("Total de pacientes: " + count);
+            }
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.toString());
+        } finally {
+            try {
+                this.closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(PatientDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        
+        
+        return count;
+    }
+
    
 }

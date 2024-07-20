@@ -14,4 +14,5 @@ public interface professionalDAO extends CRUD<Professional> {
     
        public boolean validateEmail(String email);
     Professional ValidateProfessional(int id, String pass) ;
+    public int countProfessional();
 }

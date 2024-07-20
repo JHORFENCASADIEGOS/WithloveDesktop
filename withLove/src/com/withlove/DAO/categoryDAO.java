@@ -12,4 +12,5 @@ import com.withlove.model.Category;
  */
 public interface categoryDAO extends CRUD<Category>{
     
+    public int countCategory();
 }

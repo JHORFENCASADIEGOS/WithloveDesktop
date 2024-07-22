@@ -13,7 +13,7 @@ public class connection {
     private final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
     private final String DB_URL = "jdbc:mysql://localhost/withlovedb?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8";
     private final String USER = "root";
-    private final String PASS = "123456789";
+    private final String PASS = "";
 
     public void establishConnection() {
         try {

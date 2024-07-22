@@ -156,13 +156,13 @@ public class PatientDAOImpl extends connection implements patientDAO {
 
    
     @Override
-    public Patient ValidatePatient(int id, String pass)  {
+    public Patient ValidatePatient(String id, String pass)  {
          Patient pat = null;
         
         try {
             this.establishConnection();
             PreparedStatement st = this.conect.prepareStatement("SELECT * FROM patient WHERE identification = ? AND passwordPatient = ? LIMIT 1;");
-            st.setInt(1, id);
+            st.setString(1, id);
             st.setString(2, pass);
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
@@ -243,7 +243,7 @@ public class PatientDAOImpl extends connection implements patientDAO {
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                  count = rs.getInt(1); // Obtener el primer valor de la primera fila
-               // System.out.println("Total de pacientes: " + count);
+               
             }
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, "Error: " + e.toString());

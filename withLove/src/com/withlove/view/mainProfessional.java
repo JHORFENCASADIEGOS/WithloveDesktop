@@ -7,6 +7,7 @@ package com.withlove.view;
 import com.withlove.DAO.PatientDAOImpl;
 import com.withlove.DAO.patientDAO;
 import com.withlove.model.Patient;
+import com.withlove.model.Professional;
 import java.awt.BorderLayout;
 import static java.awt.Color.black;
 import static java.awt.Color.white;
@@ -26,13 +27,18 @@ public class mainProfessional extends javax.swing.JFrame {
      * Creates new form main
      */
     patientDAO daoPat = new PatientDAOImpl();
-    Patient pat = new Patient();
+    Professional professional = new Professional();
   
 
-    public mainProfessional() {
+    public mainProfessional(Professional professional) {
         initComponents();
-
-        // setImageLabel(background, "src/com/withlove/img/background.jpg");
+        this.professional= professional;
+        this.txtNameProfessional.setText(professional.getNameProfessional()+" "+professional.getLastNamePr());
+         /*     codigo para la imagen del usuario
+       setImageLabel(imgUser, "src/com/withlove/img/logo.png");
+     */
+        
+        
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setImageLabel(logo, "src/com/withlove/img/logo.png");
         setResizable(false);
@@ -79,10 +85,12 @@ public class mainProfessional extends javax.swing.JFrame {
         containersMain = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         btnLogOut = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        imgUser = new javax.swing.JLabel();
+        txtNameProfessional = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,10 +117,6 @@ public class mainProfessional extends javax.swing.JFrame {
         jLabel1.setText("Dashboard");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 140, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 760, 70));
-
-        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
-
         btnLogOut.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
         btnLogOut.setText("Log out");
@@ -127,29 +131,41 @@ public class mainProfessional extends javax.swing.JFrame {
                 btnLogOutMouseExited(evt);
             }
         });
+        jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, -1, 15));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 760, 70));
+
+        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
 
         logo.setFont(new java.awt.Font("Copperplate Gothic Light", 3, 14)); // NOI18N
-        logo.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("WITHLOVE");
+
+        imgUser.setText("img");
+
+        txtNameProfessional.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
+        txtNameProfessional.setForeground(new java.awt.Color(255, 255, 255));
+        txtNameProfessional.setText("No borrar");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                        .addComponent(txtNameProfessional, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(14, 14, 14))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,9 +177,11 @@ public class mainProfessional extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182))
+                .addGap(154, 154, 154)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNameProfessional, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 610));
@@ -196,7 +214,7 @@ public class mainProfessional extends javax.swing.JFrame {
 
     private void btnLogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutMouseClicked
         // TODO add your handling code here:
-        pat = null;
+        professional = null;
         dispose();
         login logi = new login();
         logi.setVisible(true);
@@ -211,11 +229,13 @@ public class mainProfessional extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnLogOut;
     private javax.swing.JPanel containersMain;
+    private javax.swing.JLabel imgUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel txtNameProfessional;
     // End of variables declaration//GEN-END:variables
 }

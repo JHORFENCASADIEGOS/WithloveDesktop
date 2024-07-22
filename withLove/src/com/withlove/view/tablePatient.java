@@ -16,13 +16,13 @@ import javax.swing.table.TableColumn;
  *
  * @author SENA
  */
-public class crud extends javax.swing.JPanel {
+public class tablePatient extends javax.swing.JPanel {
     
      PatientDAOImpl patientDAO = new PatientDAOImpl();
      ProfessionalDAOImpl professionalDAO = new ProfessionalDAOImpl();
      CategoryDAOImpl categoryDAO = new CategoryDAOImpl();
     
-    public crud() {
+    public tablePatient() {
         initComponents();
         loadDataIntoTable();
         adjustColumnSizes();

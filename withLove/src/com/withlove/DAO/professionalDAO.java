@@ -13,6 +13,6 @@ import com.withlove.model.Professional;
 public interface professionalDAO extends CRUD<Professional> {
     
        public boolean validateEmail(String email);
-    Professional ValidateProfessional(int id, String pass) ;
+    Professional ValidateProfessional(String id, String pass) ;
     public int countProfessional();
 }

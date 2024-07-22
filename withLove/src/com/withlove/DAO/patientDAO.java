@@ -13,7 +13,7 @@ import com.withlove.model.Patient;
 public interface patientDAO extends CRUD<Patient> {
     
   public boolean validateEmail(String email);
-    Patient ValidatePatient(int id, String pass) ;
+    Patient ValidatePatient(String id, String pass) ;
     public int countPatient();
     
 }

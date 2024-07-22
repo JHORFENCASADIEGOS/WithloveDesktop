@@ -141,13 +141,13 @@ public class ProfessionalDAOImpl extends connection implements professionalDAO{
 
 
     @Override
-    public Professional ValidateProfessional(int id, String pass) {
+    public Professional ValidateProfessional(String id, String pass) {
         Professional pro = null;
         
         try {
             this.establishConnection();
-            PreparedStatement st = this.conect.prepareStatement("SELECT * WHERE identification = ? AND password = ? LIMIT 1;");
-            st.setInt(1, id);
+            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM professional WHERE identification = ? AND passwordPro = ? LIMIT 1;");
+            st.setString(1, id);
             st.setString(2, pass);
             ResultSet rs = st.executeQuery();
             while(rs.next()) {
@@ -223,7 +223,7 @@ public class ProfessionalDAOImpl extends connection implements professionalDAO{
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                  count = rs.getInt(1); // Obtener el primer valor de la primera fila
-               // System.out.println("Total de pacientes: " + count);
+               
             }
         } catch (Exception e) {
             JOptionPane.showConfirmDialog(null, "Error: " + e.toString());

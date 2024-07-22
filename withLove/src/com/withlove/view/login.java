@@ -265,9 +265,9 @@ public class login extends javax.swing.JFrame {
         if(!txtIdentification.getText().trim().equals("") && !(new String(txtPassword.getPassword())).trim().equals("")){
             if(RbtnPatient.isSelected()){
                 try {
-                    pat=daoPat.ValidatePatient((Integer.parseInt(txtIdentification.getText())), new String(txtPassword.getPassword()));
+                    pat=daoPat.ValidatePatient(txtIdentification.getText(), new String(txtPassword.getPassword()));
                     if(pat!=null){                                             
-                            mainPatient app1 = new mainPatient();
+                            mainPatients app1 = new mainPatients(pat);
                             app1.setVisible(true);
                             app1.setResizable(false);
                             app1.setLocationRelativeTo(null);
@@ -283,7 +283,7 @@ public class login extends javax.swing.JFrame {
             } if(RbtnProfessional.isSelected()){
                 try {
 
-                    pro=daoPro.ValidateProfessional((Integer.parseInt(txtIdentification.getText())), ( new String(txtPassword.getPassword())));
+                    pro=daoPro.ValidateProfessional((txtIdentification.getText()),  new String(txtPassword.getPassword()));
                     if(pro!=null){
                        
                         if(pro.getIdCategory()==1){
@@ -293,7 +293,7 @@ public class login extends javax.swing.JFrame {
                             app2.setLocationRelativeTo(null);
                             this.dispose();
                         } else{
-                            mainProfessional app3 = new mainProfessional();
+                            mainProfessional app3 = new mainProfessional(pro);
                             app3.setVisible(true);
                             app3.setResizable(false);
                             app3.setLocationRelativeTo(null);

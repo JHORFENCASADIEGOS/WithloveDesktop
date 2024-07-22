@@ -8,6 +8,7 @@ import com.withlove.DAO.PatientDAOImpl;
 import com.withlove.DAO.patientDAO;
 import com.withlove.model.Patient;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import static java.awt.Color.black;
 import static java.awt.Color.white;
 import java.awt.Cursor;
@@ -25,8 +26,8 @@ public class mainAdmin extends javax.swing.JFrame {
     /**
      * Creates new form main
      */
-    patientDAO daoPat = new PatientDAOImpl();
-    Patient pat = new Patient();
+   
+    
   
 
     public mainAdmin() {
@@ -79,10 +80,15 @@ public class mainAdmin extends javax.swing.JFrame {
         containersMain = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         btnLogOut = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnHome = new javax.swing.JButton();
+        btnAppointment = new javax.swing.JButton();
+        btnProfessional = new javax.swing.JButton();
+        btnPatient = new javax.swing.JButton();
+        btnCategory = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,10 +115,6 @@ public class mainAdmin extends javax.swing.JFrame {
         jLabel1.setText("Dashboard");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 140, 50));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 760, 70));
-
-        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
-
         btnLogOut.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
         btnLogOut.setForeground(new java.awt.Color(255, 255, 255));
         btnLogOut.setText("Log out");
@@ -127,29 +129,127 @@ public class mainAdmin extends javax.swing.JFrame {
                 btnLogOutMouseExited(evt);
             }
         });
+        jPanel2.add(btnLogOut, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 30, -1, 15));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 760, 70));
+
+        jPanel3.setBackground(new java.awt.Color(0, 51, 102));
 
         logo.setFont(new java.awt.Font("Copperplate Gothic Light", 3, 14)); // NOI18N
-        logo.setForeground(new java.awt.Color(0, 0, 0));
 
         jLabel2.setFont(new java.awt.Font("Franklin Gothic Demi Cond", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("WITHLOVE");
+
+        btnHome.setBackground(new java.awt.Color(0, 51, 102));
+        btnHome.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnHome.setForeground(new java.awt.Color(255, 255, 255));
+        btnHome.setText("Home");
+        btnHome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnHomeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnHomeMouseExited(evt);
+            }
+        });
+        btnHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnHomeActionPerformed(evt);
+            }
+        });
+
+        btnAppointment.setBackground(new java.awt.Color(0, 51, 102));
+        btnAppointment.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnAppointment.setForeground(new java.awt.Color(255, 255, 255));
+        btnAppointment.setText("Appointment");
+        btnAppointment.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnAppointmentMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnAppointmentMouseExited(evt);
+            }
+        });
+        btnAppointment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAppointmentActionPerformed(evt);
+            }
+        });
+
+        btnProfessional.setBackground(new java.awt.Color(0, 51, 102));
+        btnProfessional.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnProfessional.setForeground(new java.awt.Color(255, 255, 255));
+        btnProfessional.setText("Professional");
+        btnProfessional.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnProfessionalMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnProfessionalMouseExited(evt);
+            }
+        });
+        btnProfessional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnProfessionalActionPerformed(evt);
+            }
+        });
+
+        btnPatient.setBackground(new java.awt.Color(0, 51, 102));
+        btnPatient.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnPatient.setForeground(new java.awt.Color(255, 255, 255));
+        btnPatient.setText("Patient");
+        btnPatient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnPatientMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnPatientMouseExited(evt);
+            }
+        });
+        btnPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPatientActionPerformed(evt);
+            }
+        });
+
+        btnCategory.setBackground(new java.awt.Color(0, 51, 102));
+        btnCategory.setFont(new java.awt.Font("Roboto", 3, 14)); // NOI18N
+        btnCategory.setForeground(new java.awt.Color(255, 255, 255));
+        btnCategory.setText("Category");
+        btnCategory.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnCategoryMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnCategoryMouseExited(evt);
+            }
+        });
+        btnCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCategoryActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(102, 102, 102)
-                        .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(19, 19, 19)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnProfessional, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(58, 58, 58))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,9 +261,17 @@ public class mainAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 331, Short.MAX_VALUE)
-                .addComponent(btnLogOut, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(182, 182, 182))
+                .addGap(77, 77, 77)
+                .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(btnAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addComponent(btnProfessional, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(btnPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(185, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 610));
@@ -196,7 +304,7 @@ public class mainAdmin extends javax.swing.JFrame {
 
     private void btnLogOutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnLogOutMouseClicked
         // TODO add your handling code here:
-        pat = null;
+       
         dispose();
         login logi = new login();
         logi.setVisible(true);
@@ -204,12 +312,90 @@ public class mainAdmin extends javax.swing.JFrame {
         logi.setResizable(false);
     }//GEN-LAST:event_btnLogOutMouseClicked
 
+    private void btnHomeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseEntered
+        // TODO add your handling code here:
+        btnHome.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        int rgb = Integer.parseInt("003399", 16);
+        Color color = new Color(rgb);
+        btnHome.setBackground(color);
+        btnHome.setForeground(white);
+    }//GEN-LAST:event_btnHomeMouseEntered
+
+    private void btnHomeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnHomeMouseExited
+        // TODO add your handling code here:
+        btnHome.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        int rgb = Integer.parseInt("003366", 16);
+        Color color = new Color(rgb);
+        btnHome.setBackground(color);
+        btnHome.setForeground(white);
+    }//GEN-LAST:event_btnHomeMouseExited
+
+    private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+        // TODO add your handling code here:
+       
+
+        
+    }//GEN-LAST:event_btnHomeActionPerformed
+
+    private void btnAppointmentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAppointmentMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAppointmentMouseEntered
+
+    private void btnAppointmentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAppointmentMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAppointmentMouseExited
+
+    private void btnAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAppointmentActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAppointmentActionPerformed
+
+    private void btnProfessionalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfessionalMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProfessionalMouseEntered
+
+    private void btnProfessionalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfessionalMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProfessionalMouseExited
+
+    private void btnProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfessionalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProfessionalActionPerformed
+
+    private void btnPatientMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPatientMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPatientMouseEntered
+
+    private void btnPatientMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPatientMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPatientMouseExited
+
+    private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPatientActionPerformed
+
+    private void btnCategoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCategoryMouseEntered
+
+    private void btnCategoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCategoryMouseExited
+
+    private void btnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoryActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCategoryActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAppointment;
+    private javax.swing.JButton btnCategory;
+    private javax.swing.JButton btnHome;
     private javax.swing.JLabel btnLogOut;
+    private javax.swing.JButton btnPatient;
+    private javax.swing.JButton btnProfessional;
     private javax.swing.JPanel containersMain;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

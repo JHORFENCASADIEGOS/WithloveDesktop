@@ -4,9 +4,11 @@
  */
 package com.withlove.view;
 
+import com.withlove.DAO.AppointmentDAOImpl;
 import com.withlove.DAO.CategoryDAOImpl;
 import com.withlove.DAO.PatientDAOImpl;
 import com.withlove.DAO.ProfessionalDAOImpl;
+import com.withlove.model.Appointment;
 import com.withlove.model.Patient;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -16,13 +18,14 @@ import javax.swing.table.TableColumn;
  *
  * @author SENA
  */
-public class crud extends javax.swing.JPanel {
+public class tableAppointment extends javax.swing.JPanel {
     
      PatientDAOImpl patientDAO = new PatientDAOImpl();
      ProfessionalDAOImpl professionalDAO = new ProfessionalDAOImpl();
      CategoryDAOImpl categoryDAO = new CategoryDAOImpl();
+     AppointmentDAOImpl appointmentDAO = new AppointmentDAOImpl();
     
-    public crud() {
+    public tableAppointment() {
         initComponents();
         loadDataIntoTable();
         adjustColumnSizes();
@@ -34,13 +37,13 @@ public class crud extends javax.swing.JPanel {
     
     private void loadDataIntoTable() {
         // Suponiendo que tienes una instancia de PatientDAOImpl llamada patientDAOImpl
-        List<Patient> patients = patientDAO.getAll();
+        List<Appointment> appointmentss = appointmentDAO.getAll();
 
         // Preparamos los datos para la tabla
-        Object[][] data = new Object[patients.size()][9]; // 9 es el número de columnas que tienes en tu tabla
+        Object[][] data = new Object[appointmentss.size()][9]; // 9 es el número de columnas que tienes en tu tabla
         String[] columnNames = {"ID", "Nombre", "Apellido", "Aseguradora"};
 
-        for (int i = 0; i < patients.size(); i++) {
+        for (int i = 0; i < appointmentss.size(); i++) {
            /* Patient patient = patients.get(i);
             data[i][0] = patient.getIdPatient();
             data[i][1] = patient.getIdentification();
@@ -51,11 +54,11 @@ public class crud extends javax.swing.JPanel {
             data[i][6] = patient.getBirthdayDate();
             data[i][7] = patient.getGender() == 1 ? "Masculino" : "Femenino"; // Ejemplo de conversión de género
             data[i][8] = patient.getInsurer(); */
-          Patient patient = patients.get(i);
-            data[i][0] = patient.getIdPatient();            
-            data[i][1] = patient.getNamePatient();
-            data[i][2] = patient.getLastNamePa();
-            data[i][3] = patient.getInsurer(); 
+          Appointment appoint = appointmentss.get(i);
+           // data[i][0] = appoint.getIdPatient();            
+           // data[i][1] = appoint.getNamePatient();
+           // data[i][2] = appoint.getLastNamePa();
+           // data[i][3] = appoint.getInsurer(); 
           
         }
 

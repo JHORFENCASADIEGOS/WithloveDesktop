@@ -283,7 +283,7 @@ public class login extends javax.swing.JFrame {
             } if(RbtnProfessional.isSelected()){
                 try {
 
-                    pro=daoPro.ValidateProfessional((txtIdentification.getText()),  new String(txtPassword.getPassword()));
+                    pro=daoPro.ValidateProfessional(txtIdentification.getText(),  new String(txtPassword.getPassword()));
                     if(pro!=null){
                        
                         if(pro.getIdCategory()==1){
@@ -292,7 +292,7 @@ public class login extends javax.swing.JFrame {
                             app2.setResizable(false);
                             app2.setLocationRelativeTo(null);
                             this.dispose();
-                        } else{
+                        }if (pro.getIdCategory()!=1){
                             mainProfessional app3 = new mainProfessional(pro);
                             app3.setVisible(true);
                             app3.setResizable(false);

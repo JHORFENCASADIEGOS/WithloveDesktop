@@ -25,7 +25,7 @@ public class crud extends javax.swing.JPanel {
     public crud() {
         initComponents();
         loadDataIntoTable();
-        adjustColumnSizes();
+      //  adjustColumnSizes();
         this.txtCountPatient.setText("Patient: "+patientDAO.countPatient());
         this.txtCountProfessional.setText("Professional: "+professionalDAO.countProfessional());
         this.txtCountCategory.setText("Category: "+categoryDAO.countCategory());
@@ -62,9 +62,9 @@ public class crud extends javax.swing.JPanel {
         // Configuramos el modelo de la JTable
         tablePatients.setModel(new DefaultTableModel(data, columnNames));
         
-        adjustColumnSizes();
+     //   adjustColumnSizes();
     }
-    
+    /*
         private void adjustColumnSizes() {
         // Ajustamos el tamaño de las columnas
         TableColumn column;
@@ -90,7 +90,7 @@ public class crud extends javax.swing.JPanel {
         }
     }
 
-    
+    */
     
     /**
      * This method is called from within the constructor to initialize the form.

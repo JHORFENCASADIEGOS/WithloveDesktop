@@ -53,7 +53,7 @@ public class AppointmentDAOImpl extends connection implements appointmentDAO {
 
         try {
             this.establishConnection();
-            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM appointment WHERE identification = ? LIMIT 1;");
+            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM appointment WHERE identification = ? LIMIT = 1;");
             st.setString(1, id);
 
             ResultSet rs = st.executeQuery();
@@ -164,5 +164,78 @@ public class AppointmentDAOImpl extends connection implements appointmentDAO {
         }
         return appointmentList;
     }
+    
+    public List<Appointment> getAllOnePat(String id) {
+       List<Appointment> appointmentList = new ArrayList<>();
+
+        try {
+            this.establishConnection();
+            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM appointment WHERE identification = ? ORDER BY dateAvailable DESC;");
+            st.setString(1, id);
+
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Appointment app = new Appointment();
+                app.setIdAppointment(rs.getLong("idAppointment"));
+                app.setIdProfessional(rs.getLong("idProfessional"));
+                app.setIdentification(rs.getString("identification"));
+                app.setCodeCase(rs.getString("codeCase"));
+                app.setDescriptionAppoin(rs.getString("descriptionAppoin"));
+                app.setDateAvailable(rs.getDate("dateAvailable").toLocalDate());
+                app.setHourAvailable(rs.getTime("hourAvailable").toLocalTime());
+                app.setAddress(rs.getString("address"));
+                app.setPhoneNumberClinic(rs.getString("phoneNumberClinic"));
+                 appointmentList.add(app);
+            }
+            rs.close();
+            st.close();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.toString());
+        } finally {
+            try {
+                this.closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(AppointmentDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return appointmentList;
+    }
+    
+    public List<Appointment> getAllOnePro(Long id) {
+       List<Appointment> appointmentList = new ArrayList<>();
+
+        try {
+            this.establishConnection();
+            PreparedStatement st = this.conect.prepareStatement("SELECT * FROM appointment WHERE idProfessional = ? ORDER BY dateAvailable DESC");
+            st.setLong(1, id);
+
+            ResultSet rs = st.executeQuery();
+            while (rs.next()) {
+                Appointment app = new Appointment();
+                app.setIdAppointment(rs.getLong("idAppointment"));
+                app.setIdProfessional(rs.getLong("idProfessional"));
+                app.setIdentification(rs.getString("identification"));
+                app.setCodeCase(rs.getString("codeCase"));
+                app.setDescriptionAppoin(rs.getString("descriptionAppoin"));
+                app.setDateAvailable(rs.getDate("dateAvailable").toLocalDate());
+                app.setHourAvailable(rs.getTime("hourAvailable").toLocalTime());
+                app.setAddress(rs.getString("address"));
+                app.setPhoneNumberClinic(rs.getString("phoneNumberClinic"));
+                 appointmentList.add(app);
+            }
+            rs.close();
+            st.close();
+        } catch (Exception e) {
+            JOptionPane.showConfirmDialog(null, "Error: " + e.toString());
+        } finally {
+            try {
+                this.closeConnection();
+            } catch (SQLException ex) {
+                Logger.getLogger(AppointmentDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return appointmentList;
+    }
+    
 }
 

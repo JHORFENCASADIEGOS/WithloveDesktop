@@ -33,31 +33,23 @@ public class mainProfessional extends javax.swing.JFrame {
     public mainProfessional(Professional professional) {
         initComponents();
         this.professional= professional;
-        this.txtNameProfessional.setText(professional.getNameProfessional()+" "+professional.getLastNamePr());
-         /*     codigo para la imagen del usuario
-       setImageLabel(imgUser, "src/com/withlove/img/logo.png");
-     */
+        this.txtNameProfessional.setText(professional.getNameProfessional());
+           
+       setImageLabel(imgUser, "src/com/withlove/img/user.png");
+     
         
         
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setImageLabel(logo, "src/com/withlove/img/logo.png");
         setResizable(false);
 
-       /* homeU home = new homeU();
-        home.setSize(1000, 540);
-        home.setLocation(0, 0);
-        home.setVisible(true);
+      
+       tableUserProfessional user = new tableUserProfessional(professional);
+        user.setSize(1000, 540);
+        user.setLocation(0, 0);
+        user.setVisible(true);
         containersMain.removeAll();
-        containersMain.add(home);
-        containersMain.revalidate();
-        containersMain.repaint();*/
-       
-       crud home = new crud();
-        home.setSize(1000, 540);
-        home.setLocation(0, 0);
-        home.setVisible(true);
-        containersMain.removeAll();
-        containersMain.add(home);
+        containersMain.add(user);
         containersMain.revalidate();
         containersMain.repaint();
        
@@ -145,7 +137,7 @@ public class mainProfessional extends javax.swing.JFrame {
 
         imgUser.setText("img");
 
-        txtNameProfessional.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
+        txtNameProfessional.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         txtNameProfessional.setForeground(new java.awt.Color(255, 255, 255));
         txtNameProfessional.setText("No borrar");
 
@@ -156,13 +148,13 @@ public class mainProfessional extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(26, Short.MAX_VALUE))
+                        .addContainerGap(19, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(txtNameProfessional, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(14, 14, 14))))
@@ -173,15 +165,15 @@ public class mainProfessional extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(154, 154, 154)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtNameProfessional, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addContainerGap(304, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 610));

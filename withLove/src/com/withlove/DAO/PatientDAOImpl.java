@@ -178,7 +178,7 @@ public class PatientDAOImpl extends connection implements patientDAO {
                 pat.setGender(rs.getInt("gender"));
                 pat.setPasswordPatient(rs.getString("passwordPatient"));
                 pat.setInsurer(rs.getString("insurer"));
-               // JOptionPane.showConfirmDialog(null, "Welcome");
+               
             }
             rs.close();
             st.close();

@@ -161,7 +161,7 @@ public class ProfessionalDAOImpl extends connection implements professionalDAO{
                 pro.setPasswordPro(rs.getString("passwordPro"));
                 pro.setProfession(rs.getString("profession"));
                 pro.setIdCategory(rs.getLong("idCategory"));
-                JOptionPane.showConfirmDialog(null, "Welcome");
+               
             }
             rs.close();
             st.close();

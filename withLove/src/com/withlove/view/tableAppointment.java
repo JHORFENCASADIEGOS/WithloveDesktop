@@ -28,7 +28,7 @@ public class tableAppointment extends javax.swing.JPanel {
     public tableAppointment() {
         initComponents();
         loadDataIntoTable();
-        adjustColumnSizes();
+       // adjustColumnSizes();
         this.txtCountPatient.setText("Patient: "+patientDAO.countPatient());
         this.txtCountProfessional.setText("Professional: "+professionalDAO.countProfessional());
         this.txtCountCategory.setText("Category: "+categoryDAO.countCategory());
@@ -40,34 +40,27 @@ public class tableAppointment extends javax.swing.JPanel {
         List<Appointment> appointmentss = appointmentDAO.getAll();
 
         // Preparamos los datos para la tabla
-        Object[][] data = new Object[appointmentss.size()][9]; // 9 es el número de columnas que tienes en tu tabla
-        String[] columnNames = {"ID", "Nombre", "Apellido", "Aseguradora"};
+        Object[][] data = new Object[appointmentss.size()][5]; // 9 es el número de columnas que tienes en tu tabla
+        String[] columnNames = {"ID", "IdProfessional", "IdPatient", "Date","Hour"};
 
         for (int i = 0; i < appointmentss.size(); i++) {
-           /* Patient patient = patients.get(i);
-            data[i][0] = patient.getIdPatient();
-            data[i][1] = patient.getIdentification();
-            data[i][2] = patient.getNamePatient();
-            data[i][3] = patient.getLastNamePa();
-            data[i][4] = patient.getEmail();
-            data[i][5] = patient.getPhoneNumberPatient();
-            data[i][6] = patient.getBirthdayDate();
-            data[i][7] = patient.getGender() == 1 ? "Masculino" : "Femenino"; // Ejemplo de conversión de género
-            data[i][8] = patient.getInsurer(); */
+           
           Appointment appoint = appointmentss.get(i);
-           // data[i][0] = appoint.getIdPatient();            
-           // data[i][1] = appoint.getNamePatient();
-           // data[i][2] = appoint.getLastNamePa();
-           // data[i][3] = appoint.getInsurer(); 
+            data[i][0] = appoint.getIdAppointment();
+            data[i][1] = appoint.getIdProfessional();
+            data[i][2] = appoint.getIdentification();
+            data[i][3] = appoint.getDateAvailable();
+            data[i][4] = appoint.getHourAvailable();
+            
           
         }
 
         // Configuramos el modelo de la JTable
         tablePatients.setModel(new DefaultTableModel(data, columnNames));
         
-        adjustColumnSizes();
+       // adjustColumnSizes();
     }
-    
+    /*
         private void adjustColumnSizes() {
         // Ajustamos el tamaño de las columnas
         TableColumn column;
@@ -92,7 +85,7 @@ public class tableAppointment extends javax.swing.JPanel {
             }
         }
     }
-
+*/
     
     
     /**

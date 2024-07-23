@@ -25,7 +25,7 @@ public class tablePatient extends javax.swing.JPanel {
     public tablePatient() {
         initComponents();
         loadDataIntoTable();
-        adjustColumnSizes();
+       //s adjustColumnSizes();
         this.txtCountPatient.setText("Patient: "+patientDAO.countPatient());
         this.txtCountProfessional.setText("Professional: "+professionalDAO.countProfessional());
         this.txtCountCategory.setText("Category: "+categoryDAO.countCategory());
@@ -37,20 +37,11 @@ public class tablePatient extends javax.swing.JPanel {
         List<Patient> patients = patientDAO.getAll();
 
         // Preparamos los datos para la tabla
-        Object[][] data = new Object[patients.size()][9]; // 9 es el número de columnas que tienes en tu tabla
-        String[] columnNames = {"ID", "Nombre", "Apellido", "Aseguradora"};
+        Object[][] data = new Object[patients.size()][4]; // 9 es el número de columnas que tienes en tu tabla
+        String[] columnNames = {"ID", "Name", "LastName", "Insurer"};
 
         for (int i = 0; i < patients.size(); i++) {
-           /* Patient patient = patients.get(i);
-            data[i][0] = patient.getIdPatient();
-            data[i][1] = patient.getIdentification();
-            data[i][2] = patient.getNamePatient();
-            data[i][3] = patient.getLastNamePa();
-            data[i][4] = patient.getEmail();
-            data[i][5] = patient.getPhoneNumberPatient();
-            data[i][6] = patient.getBirthdayDate();
-            data[i][7] = patient.getGender() == 1 ? "Masculino" : "Femenino"; // Ejemplo de conversión de género
-            data[i][8] = patient.getInsurer(); */
+          
           Patient patient = patients.get(i);
             data[i][0] = patient.getIdPatient();            
             data[i][1] = patient.getNamePatient();
@@ -62,9 +53,9 @@ public class tablePatient extends javax.swing.JPanel {
         // Configuramos el modelo de la JTable
         tablePatients.setModel(new DefaultTableModel(data, columnNames));
         
-        adjustColumnSizes();
+      //  adjustColumnSizes();
     }
-    
+    /*
         private void adjustColumnSizes() {
         // Ajustamos el tamaño de las columnas
         TableColumn column;
@@ -89,7 +80,7 @@ public class tablePatient extends javax.swing.JPanel {
             }
         }
     }
-
+*/
     
     
     /**

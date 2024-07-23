@@ -32,10 +32,10 @@ public class mainPatients extends javax.swing.JFrame {
     public mainPatients(Patient patient) {
         initComponents();
         this.patient = patient;
-        this.txtNamePatient.setText(patient.getNamePatient()+" "+patient.getLastNamePa());
-        /*     codigo para la imagen del usuario
-       setImageLabel(imgUser, "src/com/withlove/img/logo.png");
-     */
+        this.txtNamePatient.setText(patient.getNamePatient());
+       
+       setImageLabel(imgUser, "src/com/withlove/img/user.png");
+     
         
         
        
@@ -43,21 +43,14 @@ public class mainPatients extends javax.swing.JFrame {
         setImageLabel(logo, "src/com/withlove/img/logo.png");
         setResizable(false);
 
-       /* homeU home = new homeU();
-        home.setSize(1000, 540);
-        home.setLocation(0, 0);
-        home.setVisible(true);
-        containersMain.removeAll();
-        containersMain.add(home);
-        containersMain.revalidate();
-        containersMain.repaint();*/
        
-       crud home = new crud();
-        home.setSize(1000, 540);
-        home.setLocation(0, 0);
-        home.setVisible(true);
+       
+       tableUserPatient user = new tableUserPatient(patient);
+        user.setSize(1000, 540);
+        user.setLocation(0, 0);
+        user.setVisible(true);
         containersMain.removeAll();
-        containersMain.add(home);
+        containersMain.add(user);
         containersMain.revalidate();
         containersMain.repaint();
        setImageLabel(logo, "src/com/withlove/img/logo.png");
@@ -142,7 +135,7 @@ public class mainPatients extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("WITHLOVE");
 
-        txtNamePatient.setFont(new java.awt.Font("Segoe UI Black", 3, 14)); // NOI18N
+        txtNamePatient.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
         txtNamePatient.setForeground(new java.awt.Color(255, 255, 255));
         txtNamePatient.setText("No borrar");
 
@@ -153,15 +146,18 @@ public class mainPatients extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(txtNamePatient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNamePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,15 +165,15 @@ public class mainPatients extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(153, 153, 153)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNamePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(324, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(imgUser, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNamePatient, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(305, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 610));

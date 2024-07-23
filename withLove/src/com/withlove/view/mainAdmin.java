@@ -38,16 +38,9 @@ public class mainAdmin extends javax.swing.JFrame {
         setImageLabel(logo, "src/com/withlove/img/logo.png");
         setResizable(false);
 
-       /* homeU home = new homeU();
-        home.setSize(1000, 540);
-        home.setLocation(0, 0);
-        home.setVisible(true);
-        containersMain.removeAll();
-        containersMain.add(home);
-        containersMain.revalidate();
-        containersMain.repaint();*/
+      
        
-       crud home = new crud();
+       homeAdmin home = new homeAdmin();
         home.setSize(1000, 540);
         home.setLocation(0, 0);
         home.setVisible(true);
@@ -265,13 +258,13 @@ public class mainAdmin extends javax.swing.JFrame {
                 .addComponent(btnHome, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(btnAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(36, 36, 36)
+                .addGap(30, 30, 30)
                 .addComponent(btnProfessional, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(29, 29, 29)
                 .addComponent(btnCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addContainerGap(180, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 610));
@@ -331,7 +324,14 @@ public class mainAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHomeMouseExited
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
-        // TODO add your handling code here:
+          homeAdmin table = new homeAdmin();
+        table.setSize(1000, 540);
+        table.setLocation(0, 0);
+        table.setVisible(true);
+        containersMain.removeAll();
+        containersMain.add(table);
+        containersMain.revalidate();
+        containersMain.repaint();
        
 
         
@@ -339,50 +339,118 @@ public class mainAdmin extends javax.swing.JFrame {
 
     private void btnAppointmentMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAppointmentMouseEntered
         // TODO add your handling code here:
+        btnAppointment.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        int rgb = Integer.parseInt("003399", 16);
+        Color color = new Color(rgb);
+        btnAppointment.setBackground(color);
+        btnAppointment.setForeground(white);
     }//GEN-LAST:event_btnAppointmentMouseEntered
 
     private void btnAppointmentMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAppointmentMouseExited
         // TODO add your handling code here:
+        btnAppointment.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        int rgb = Integer.parseInt("003366", 16);
+        Color color = new Color(rgb);
+        btnAppointment.setBackground(color);
+        btnAppointment.setForeground(white);
     }//GEN-LAST:event_btnAppointmentMouseExited
 
     private void btnAppointmentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAppointmentActionPerformed
-        // TODO add your handling code here:
+          tableAppointment table = new tableAppointment();
+        table.setSize(1000, 540);
+        table.setLocation(0, 0);
+        table.setVisible(true);
+        containersMain.removeAll();
+        containersMain.add(table);
+        containersMain.revalidate();
+        containersMain.repaint();
     }//GEN-LAST:event_btnAppointmentActionPerformed
 
     private void btnProfessionalMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfessionalMouseEntered
         // TODO add your handling code here:
+        btnProfessional.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        int rgb = Integer.parseInt("003399", 16);
+        Color color = new Color(rgb);
+        btnProfessional.setBackground(color);
+        btnProfessional.setForeground(white);
     }//GEN-LAST:event_btnProfessionalMouseEntered
 
     private void btnProfessionalMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProfessionalMouseExited
         // TODO add your handling code here:
+        btnProfessional.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        int rgb = Integer.parseInt("003366", 16);
+        Color color = new Color(rgb);
+        btnProfessional.setBackground(color);
+        btnProfessional.setForeground(white);
     }//GEN-LAST:event_btnProfessionalMouseExited
 
     private void btnProfessionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfessionalActionPerformed
-        // TODO add your handling code here:
+          tableProfessionals table = new tableProfessionals();
+        table.setSize(1000, 540);
+        table.setLocation(0, 0);
+        table.setVisible(true);
+        containersMain.removeAll();
+        containersMain.add(table);
+        containersMain.revalidate();
+        containersMain.repaint();
     }//GEN-LAST:event_btnProfessionalActionPerformed
 
     private void btnPatientMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPatientMouseEntered
         // TODO add your handling code here:
+         btnPatient.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        int rgb = Integer.parseInt("003399", 16);
+        Color color = new Color(rgb);
+        btnPatient.setBackground(color);
+        btnPatient.setForeground(white);
     }//GEN-LAST:event_btnPatientMouseEntered
 
     private void btnPatientMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPatientMouseExited
         // TODO add your handling code here:
+        btnPatient.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        int rgb = Integer.parseInt("003366", 16);
+        Color color = new Color(rgb);
+        btnPatient.setBackground(color);
+        btnPatient.setForeground(white);
     }//GEN-LAST:event_btnPatientMouseExited
 
     private void btnPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPatientActionPerformed
-        // TODO add your handling code here:
+          tablePatient table = new tablePatient();
+        table.setSize(1000, 540);
+        table.setLocation(0, 0);
+        table.setVisible(true);
+        containersMain.removeAll();
+        containersMain.add(table);
+        containersMain.revalidate();
+        containersMain.repaint();
     }//GEN-LAST:event_btnPatientActionPerformed
 
     private void btnCategoryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryMouseEntered
         // TODO add your handling code here:
+         btnCategory.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        int rgb = Integer.parseInt("003399", 16);
+        Color color = new Color(rgb);
+        btnCategory.setBackground(color);
+        btnCategory.setForeground(white);
     }//GEN-LAST:event_btnCategoryMouseEntered
 
     private void btnCategoryMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCategoryMouseExited
         // TODO add your handling code here:
+        btnCategory.setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
+        int rgb = Integer.parseInt("003366", 16);
+        Color color = new Color(rgb);
+        btnCategory.setBackground(color);
+        btnCategory.setForeground(white);
     }//GEN-LAST:event_btnCategoryMouseExited
 
     private void btnCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCategoryActionPerformed
-        // TODO add your handling code here:
+          tableCategories table = new tableCategories();
+        table.setSize(1000, 540);
+        table.setLocation(0, 0);
+        table.setVisible(true);
+        containersMain.removeAll();
+        containersMain.add(table);
+        containersMain.revalidate();
+        containersMain.repaint();
     }//GEN-LAST:event_btnCategoryActionPerformed
 
     /**

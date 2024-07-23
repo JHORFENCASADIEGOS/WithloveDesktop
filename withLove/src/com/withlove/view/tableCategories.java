@@ -7,6 +7,7 @@ package com.withlove.view;
 import com.withlove.DAO.CategoryDAOImpl;
 import com.withlove.DAO.PatientDAOImpl;
 import com.withlove.DAO.ProfessionalDAOImpl;
+import com.withlove.model.Category;
 import com.withlove.model.Patient;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
@@ -25,7 +26,7 @@ public class tableCategories extends javax.swing.JPanel {
     public tableCategories() {
         initComponents();
         loadDataIntoTable();
-        adjustColumnSizes();
+      //  adjustColumnSizes();
         this.txtCountPatient.setText("Patient: "+patientDAO.countPatient());
         this.txtCountProfessional.setText("Professional: "+professionalDAO.countProfessional());
         this.txtCountCategory.setText("Category: "+categoryDAO.countCategory());
@@ -34,37 +35,26 @@ public class tableCategories extends javax.swing.JPanel {
     
     private void loadDataIntoTable() {
         // Suponiendo que tienes una instancia de PatientDAOImpl llamada patientDAOImpl
-        List<Patient> patients = patientDAO.getAll();
+        List<Category> categories = categoryDAO.getAll();
 
         // Preparamos los datos para la tabla
-        Object[][] data = new Object[patients.size()][9]; // 9 es el número de columnas que tienes en tu tabla
-        String[] columnNames = {"ID", "Nombre", "Apellido", "Aseguradora"};
+        Object[][] data = new Object[categories.size()][4]; // 9 es el número de columnas que tienes en tu tabla
+        String[] columnNames = {"ID", "Profession"};
 
-        for (int i = 0; i < patients.size(); i++) {
-           /* Patient patient = patients.get(i);
-            data[i][0] = patient.getIdPatient();
-            data[i][1] = patient.getIdentification();
-            data[i][2] = patient.getNamePatient();
-            data[i][3] = patient.getLastNamePa();
-            data[i][4] = patient.getEmail();
-            data[i][5] = patient.getPhoneNumberPatient();
-            data[i][6] = patient.getBirthdayDate();
-            data[i][7] = patient.getGender() == 1 ? "Masculino" : "Femenino"; // Ejemplo de conversión de género
-            data[i][8] = patient.getInsurer(); */
-          Patient patient = patients.get(i);
-            data[i][0] = patient.getIdPatient();            
-            data[i][1] = patient.getNamePatient();
-            data[i][2] = patient.getLastNamePa();
-            data[i][3] = patient.getInsurer(); 
+        for (int i = 0; i < categories.size(); i++) {
+           
+          Category category = categories.get(i);
+            data[i][0] = category.getIdCategory();
+            data[i][1] = category.getNameProfession();
           
         }
 
         // Configuramos el modelo de la JTable
         tablePatients.setModel(new DefaultTableModel(data, columnNames));
         
-        adjustColumnSizes();
+      //  adjustColumnSizes();
     }
-    
+    /*
         private void adjustColumnSizes() {
         // Ajustamos el tamaño de las columnas
         TableColumn column;
@@ -89,7 +79,7 @@ public class tableCategories extends javax.swing.JPanel {
             }
         }
     }
-
+*/
     
     
     /**
